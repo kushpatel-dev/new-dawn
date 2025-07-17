@@ -1,0 +1,143 @@
+{% assign unique_id = 'ba_slider_' | append: section.id %}
+
+<section id="{{ unique_id }}" class="relative w-full max-w-5xl mx-auto py-10 px-4">
+  <div class="relative overflow-hidden rounded-xl max-h-[500px]">
+    {% if section.settings.show_content %}
+      <div class="mt-8 text-center space-y-3">
+        <h2 class="text-3xl font-bold">{{ section.settings.ba_heading }}</h2>
+        <div class="max-w-2xl mx-auto text-gray-700 prose">{{ section.settings.ba_content }}</div>
+      </div>
+    {% endif %}
+    <div class="relative aspect-[4/3] w-full max-h-[500px]">
+        <!-- AFTER image -->
+      <img
+        height=""
+        width=""
+        src="{{ section.settings.af_image | image_url }}"
+        alt="After Image"
+        class="absolute inset-0 w-full h-full object-cover z-0">
+
+
+      <!-- BEFORE wrapper -->
+      <div class="absolute inset-0 z-1 overflow-hidden before-wrapper" style="width: 50%;">
+        <img
+          height=""
+          width=""
+          src="{{ section.settings.bf_image | image_url }}"
+          alt="Before Image"
+          class="w-full h-full object-cover {% if section.settings.grayscale_before %}grayscale{% endif %}">
+      </div>
+    </div>
+
+    <!-- Slider input -->
+    <input
+      type="range"
+      min="0"
+      max="100"
+      value="50"
+      class="absolute inset-0 w-full h-full opacity-0 z-20 cursor-ew-resize slider-range"
+      aria-label="Before After Slider">
+
+    <!-- Center line -->
+    <div
+      class="absolute top-0 bottom-0 w-[2px] bg-white z-30 pointer-events-none"
+      style="left: 50%; transform: translateX(-50%);"
+      id="{{ unique_id }}-line"></div>
+
+    <!-- Drag Handle -->
+    <div
+      class="absolute top-[240px] md:top-[300px] z-0 bg-white p-2 rounded-full shadow-md pointer-events-none"
+      style="left: 50%; transform: translate(-50%, -50%);"
+      id="{{ unique_id }}-button">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="currentColor"
+        viewBox="0 0 256 256">
+        <line
+          x1="128"
+          y1="40"
+          x2="128"
+          y2="216"
+          stroke="currentColor"
+          stroke-width="16"
+          stroke-linecap="round" />
+        <polyline
+          points="48 160 16 128 48 96"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="16" />
+        <polyline
+          points="208 96 240 128 208 160"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="16" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const wrapper = document.getElementById('{{ unique_id }}');
+    if (!wrapper) return;
+  
+    const range = wrapper.querySelector('.slider-range');
+    const before = wrapper.querySelector('.before-wrapper');
+    const button = wrapper.querySelector('#{{ unique_id }}-button');
+    const line = wrapper.querySelector('#{{ unique_id }}-line');
+  
+    range.addEventListener('input', (e) => {
+      const percent = `${e.target.value}%`;
+      before.style.width = percent;
+      button.style.left = percent;
+      line.style.left = percent;
+    });
+  });
+</script>
+
+{% schema %}
+  {
+    "name": "Before / After Slider",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "bf_image",
+        "label": "Before Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "af_image",
+        "label": "After Image"
+      },
+      {
+        "type": "checkbox",
+        "id": "grayscale_before",
+        "label": "Apply grayscale on Before Image",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_content",
+        "label": "Show Content Below",
+        "default": true
+      }, {
+        "type": "text",
+        "id": "ba_heading",
+        "label": "Heading",
+        "default": "Before & After"
+      }, {
+        "type": "richtext",
+        "id": "ba_content",
+        "label": "Description",
+        "default": "<p>See the transformation in real-time using the slider above.</p>"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Before / After Slider"
+      }
+    ]
+  }
+{% endschema %}
