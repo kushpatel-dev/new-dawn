@@ -1,0 +1,98 @@
+<section class="py-12 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-10">{{ section.settings.heading }}</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {% for block in section.blocks %}
+        {% assign product = all_products[block.settings.product] %}
+        {% if product %}
+          {% assign card_size = block.settings.card_size %}
+          <div class="
+              group relative flex flex-col bg-white rounded-2xl overflow-hidden shadow-md transition hover:shadow-xl hover:-translate-y-1 duration-300
+              {% if card_size == 'large' %}
+                sm:col-span-2 lg:col-span-2
+              {% endif %}
+            ">
+            <div class="relative overflow-hidden">
+              <img
+                src="{{ product.featured_image | image_url: width: 800 }}"
+                alt="{{ product.title | escape }}"
+                class="w-full {% if card_size == 'large' %}h-80{% else %}h-80{% endif %} object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+                width="800"
+                height="600">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300"></div>
+            </div>
+
+            <div class="flex-1 p-5 flex flex-col justify-between space-y-3">
+              <h3 class="text-lg font-semibold text-gray-900 group-hover:text-indigo-600 transition">
+                {{ product.title }}
+              </h3>
+              <p class="text-sm text-gray-500">{{ product.description | strip_html | truncatewords: 15 }}</p>
+              <p class="text-xl font-bold text-indigo-600">{{ product.price | money }}</p>
+            </div>
+
+            <div class="p-5 pt-0">
+              <a href="{{ product.url }}" class="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium py-3 rounded-xl transition">
+                {{ block.settings.button_label }}
+              </a>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Decor Product Grid",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Section Heading",
+        "default": "Featured Decor Products"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "product_block",
+        "name": "Product Card",
+        "settings": [
+          {
+            "type": "product",
+            "id": "product",
+            "label": "Select Product"
+          }, {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Text",
+            "default": "Shop Now"
+          }, {
+            "type": "select",
+            "id": "card_size",
+            "label": "Card Size",
+            "default": "normal",
+            "options": [
+              {
+                "value": "normal",
+                "label": "Normal"
+              }, {
+                "value": "large",
+                "label": "Large (spans 2 columns)"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "max_blocks": 8,
+    "presets": [
+      {
+        "name": "Decor Product Grid",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

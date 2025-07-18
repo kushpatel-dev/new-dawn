@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+
+header.header {
+  @apply bg-blue-400;
+}
+
+.custom-a a span{
+  @apply text-[#6f3232] font-bold ;
+}

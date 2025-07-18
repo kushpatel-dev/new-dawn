@@ -36,35 +36,35 @@
         "button"
       ],
       "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "image_behavior": "none",
+        "image": "shopify://shop_images/home-decor-trends-2021_52013930-4f68-4ed4-bee2-b8eed43f0c3b.jpg",
+        "image_overlay_opacity": 10,
+        "image_height": "adapt",
+        "image_behavior": "ambient",
+        "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
+        "show_text_box": true,
+        "color_scheme": "scheme-2ca0e718-d346-4b80-9e49-1bb961358ea2",
+        "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
+        "show_text_below": true
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
+        "collection": "all",
+        "products_to_show": 8,
         "title": "Featured products",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "enable_desktop_slider": false,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "swipe_on_mobile": false,
+        "color_scheme": "scheme-1",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": true,
@@ -72,13 +72,27 @@
         "show_rating": false,
         "quick_add": "none",
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 44,
         "padding_bottom": 36
+      }
+    },
+    "before_after_49mwjU": {
+      "type": "before-after",
+      "name": "Before / After Slider",
+      "settings": {
+        "bf_image": "shopify://shop_images/home_decor_home_decor_ideas_apartment_decor.jpg",
+        "af_image": "shopify://shop_images/aa5bee3d-1fae-414e-8c2d-53eab9658122.jpg",
+        "grayscale_before": true,
+        "show_content": true,
+        "ba_heading": "Before & After",
+        "ba_content": "<p>See the transformation in real-time using the slider above.</p>"
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "before_after_49mwjU"
   ]
 }

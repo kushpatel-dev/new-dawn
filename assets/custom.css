@@ -1,0 +1,7 @@
+.custom-a{
+  @apply text-[#e78989]; 
+}
+
+.kushpatel{
+    @apply text-2xl;
+}
