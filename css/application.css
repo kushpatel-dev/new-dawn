@@ -2,7 +2,7 @@
 
 
 header.header {
-  @apply bg-blue-100;
+  @apply bg-blue-100 py-3;
 }
 
 .custom-a a span{
