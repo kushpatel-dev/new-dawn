@@ -1,0 +1,195 @@
+{% stylesheet %}
+  @import url("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css");
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    position: relative;
+    text-align: left;
+    background: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .slide-overlay {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    max-width: 90%;
+  }
+{% endstylesheet %}
+
+<section style="background: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }};" class="swiper-section py-10">
+  {% if section.settings.heading != blank %}
+    <h2 class="text-center text-2xl font-bold mb-6">{{ section.settings.heading }}</h2>
+  {% endif %}
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        <div class="swiper-slide" {{ block.shopify_attributes }}>
+          {% if block.settings.slide_image != blank %}
+            <img
+              height=""
+              width=""
+              src="{{ block.settings.slide_image | image_url: width: 1600 }}"
+              alt="Slide Image" />
+          {% endif %}
+
+          <div class="slide-overlay text-white">
+            {% if block.settings.slide_heading != blank %}
+              <h3 class="text-xl font-bold mb-2">{{ block.settings.slide_heading }}</h3>
+            {% endif %}
+            {% if block.settings.slide_text != blank %}
+              <p class="mb-3">{{ block.settings.slide_text }}</p>
+            {% endif %}
+            {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+              <a href="{{ block.settings.button_link }}" class="inline-block bg-white text-black px-4 py-2 rounded hover:bg-gray-200 transition">
+                {{ block.settings.button_label }}
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.show_pagination %}
+      <div class="swiper-pagination"></div>
+    {% endif %}
+    {% if section.settings.show_arrows %}
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    {% endif %}
+  </div>
+</section>
+
+
+const swiper = new Swiper('.mySwiper', {
+ 
+ 
+ 
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+{% if section.settings.show_pagination %}
+  pagination: {
+ 
+ 
+ 
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+{% endif %}
+{% if section.settings.show_arrows %}
+  navigation: {
+ 
+ 
+ 
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+{% endif %}
+});
+
+
+{% schema %}
+  {
+    "name": "Swiper Slider",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Slider Heading",
+        "default": "Explore Our Slides"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_arrows",
+        "label": "Show Navigation Arrows",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_pagination",
+        "label": "Show Pagination Dots",
+        "default": true
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background Color",
+        "default": "#000000"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text Color",
+        "default": "#ffffff"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "slide",
+        "name": "Slide",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "slide_image",
+            "label": "Slide Image"
+          },
+          {
+            "type": "text",
+            "id": "slide_heading",
+            "label": "Slide Heading",
+            "default": "Slide Title"
+          },
+          {
+            "type": "textarea",
+            "id": "slide_text",
+            "label": "Slide Text",
+            "default": "This is a sample description for the slide."
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button Label",
+            "default": "Learn More"
+          }, {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 10,
+    "presets": [
+      {
+        "name": "Image Slider",
+        "category": "Media",
+        "blocks": [
+          {
+            "type": "slide"
+          }, {
+            "type": "slide"
+          }, {
+            "type": "slide"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

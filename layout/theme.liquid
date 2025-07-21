@@ -352,6 +352,8 @@ body {
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
@@ -434,9 +436,9 @@ body {
     {%- endif -%}
   {% comment %} <style>
 
-          .header-wrapper * {
-            color: #e78989;
-          }
-      </style> {% endcomment %}
+                          .header-wrapper * {
+                            color: #e78989;
+                          }
+              </style> {% endcomment %}
   </body>
 </html>

@@ -1,0 +1,116 @@
+{% stylesheet %}
+  .announcement-bar-custom {
+    background-color: #f9f8f3;
+  }
+{% endstylesheet %}
+
+<section class="announcement-bar-custom w-full py-3 px-4 text-sm ob">
+  <div class="max-w-8xl flex flex-col md:flex-row justify-between items-center gap-4 px-[80px]">
+    <div class="text-gray-800 text-2xl">
+      {{ section.settings.message }}
+    </div>
+
+    <div class="flex gap-3">
+      {% for block in section.blocks %}
+        <a href="{{ block.settings.button_url }}" class="border font-semibold transition
+          px-3 py-1.5 text-base  
+
+          sm:px-4 sm:py-2 sm:text-lg
+          md:px-5 md:py-2.5 md:text-xl
+          lg:px-6 lg:py-3 lg:text-2xl
+
+          {% if block.settings.button_style == 'filled' %}
+            bg-[#6c6c5f] text-white hover:bg-[#59594f]
+          {% else %}
+            text-[#6c6c5f] border-[#6c6c5f] hover:bg-[#e6e6e2]
+          {% endif %}
+   ">
+          {{ block.settings.button_text }}
+        </a>
+
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Custom Announcement Bar",
+    "tag": "section",
+    "class": "announcement-bar-custom-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "message",
+        "label": "Announcement message",
+        "default": "This is the first example of a sitewide notice."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "button",
+        "name": "Button",
+        "settings": [
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button text",
+            "default": "BOOK NOW"
+          }, {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button link"
+          }, {
+            "type": "select",
+            "id": "button_style",
+            "label": "Style",
+            "options": [
+              {
+                "value": "filled",
+                "label": "Filled"
+              }, {
+                "value": "outlined",
+                "label": "Outlined"
+              }
+            ],
+            "default": "filled"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 3,
+    "presets": [
+      {
+        "name": "Custom Announcement Bar",
+        "category": "Custom",
+        "settings": {
+          "message": "This is the first example of a sitewide notice."
+        },
+        "blocks": [
+          {
+            "type": "button",
+            "settings": {
+              "button_text": "BOOK NOW",
+              "button_url": "#",
+              "button_style": "filled"
+            }
+          }, {
+            "type": "button",
+            "settings": {
+              "button_text": "FIND A STYLIST",
+              "button_url": "#",
+              "button_style": "outlined"
+            }
+          }, {
+            "type": "button",
+            "settings": {
+              "button_text": "GIFT",
+              "button_url": "#",
+              "button_style": "outlined"
+            }
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

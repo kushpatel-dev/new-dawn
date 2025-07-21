@@ -15,19 +15,19 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
+            "heading": "Step Into the  <strong> Haus of Bloom Experience. A Modern Retreat for Hair</strong>",
             "heading_size": "h0"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_label_1": "Find a Stylist",
+            "button_link_1": "#",
             "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_label_2": "book now",
+            "button_link_2": "#",
+            "button_style_secondary_2": true
           }
         }
       },
@@ -36,14 +36,14 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/home-decor-trends-2021_52013930-4f68-4ed4-bee2-b8eed43f0c3b.jpg",
+        "image": "shopify://shop_images/2ad08f01a9ab43db087df5f35a3f8a338daf1595.jpg",
         "image_overlay_opacity": 10,
-        "image_height": "adapt",
-        "image_behavior": "ambient",
+        "image_height": "medium",
+        "image_behavior": "none",
         "desktop_content_position": "middle-center",
         "desktop_content_alignment": "center",
-        "show_text_box": true,
-        "color_scheme": "scheme-2ca0e718-d346-4b80-9e49-1bb961358ea2",
+        "show_text_box": false,
+        "color_scheme": "scheme-1",
         "stack_images_on_mobile": true,
         "mobile_content_alignment": "center",
         "show_text_below": true
