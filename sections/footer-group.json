@@ -11,6 +11,151 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "custom_footer_iUUXcD": {
+      "type": "custom-footer",
+      "blocks": {
+        "featured_logo_iNWzfX": {
+          "type": "featured_logo",
+          "settings": {
+            "logo_img": "shopify://shop_images/logo_29_1_1_2.png"
+          }
+        },
+        "footer_logo_gf9NbQ": {
+          "type": "footer_logo",
+          "settings": {
+            "footer_logo_img": "shopify://shop_images/Logo_2.png"
+          }
+        },
+        "featured_logo_YJipT8": {
+          "type": "featured_logo",
+          "settings": {
+            "logo_img": "shopify://shop_images/image_-_2024-12-13T161448.029_1_1.png"
+          }
+        },
+        "featured_logo_TpwVa6": {
+          "type": "featured_logo",
+          "settings": {
+            "logo_img": "shopify://shop_images/image_-_2024-12-13T161512.379_1.png"
+          }
+        },
+        "featured_logo_VJdjHB": {
+          "type": "featured_logo",
+          "settings": {
+            "logo_img": "shopify://shop_images/image_-_2024-12-13T161532.351_1_1.png"
+          }
+        },
+        "featured_logo_YrBkHj": {
+          "type": "featured_logo",
+          "settings": {
+            "logo_img": "shopify://shop_images/Group_2.png"
+          }
+        },
+        "featured_logo_HJ6MEm": {
+          "type": "featured_logo",
+          "settings": {
+            "logo_img": "shopify://shop_images/SANF_mag_black_1.png"
+          }
+        },
+        "instagram_image_9Gkjkm": {
+          "type": "instagram_image",
+          "settings": {
+            "insta_img": "shopify://shop_images/instagram_icon_65dac3bc-72cb-440a-9a91-26760a7ad74d.png"
+          }
+        },
+        "instagram_image_kPnFnc": {
+          "type": "instagram_image",
+          "settings": {
+            "insta_img": "shopify://shop_images/youtube_icon_d49a37c8-6ae1-4364-9449-91d1b6a89fb4.png"
+          }
+        },
+        "instagram_image_PXzdQM": {
+          "type": "instagram_image",
+          "settings": {
+            "insta_img": "shopify://shop_images/yelp_icon_ec8c7031-4b29-49f8-ae35-b863fd207473.png"
+          }
+        },
+        "instagram_image_Qm6Kn3": {
+          "type": "instagram_image",
+          "settings": {
+            "insta_img": "shopify://shop_images/x_icon_842a7840-4206-441d-a0b8-9b27ee0075f2.png"
+          }
+        },
+        "instagram_image_3QUEAi": {
+          "type": "instagram_image",
+          "settings": {
+            "insta_img": "shopify://shop_images/linkedin_icon_44c7e97b-ab79-4923-b9e5-864cc7c47a94.png"
+          }
+        },
+        "instagram_image_Ej9B3N": {
+          "type": "instagram_image",
+          "settings": {
+            "insta_img": "shopify://shop_images/tiktok_icon_7e5b35e7-361f-476d-98ba-88ad5c5d36bd.png"
+          }
+        },
+        "instagram_image_PeJb4a": {
+          "type": "instagram_image",
+          "settings": {
+            "insta_img": "shopify://shop_images/facebook_icon_8669740b-1434-4779-9291-ea380eeb9860.png"
+          }
+        },
+        "learn_link_zydw4a": {
+          "type": "learn_link",
+          "settings": {
+            "link_label": "Latest News",
+            "link_url": "#"
+          }
+        },
+        "learn_link_thh3m6": {
+          "type": "learn_link",
+          "settings": {
+            "link_label": "Cancellation Policy",
+            "link_url": "#"
+          }
+        },
+        "learn_link_M6BHat": {
+          "type": "learn_link",
+          "settings": {
+            "link_label": "Privacy Policy",
+            "link_url": "#"
+          }
+        },
+        "learn_link_B3Kkdm": {
+          "type": "learn_link",
+          "settings": {
+            "link_label": "FAQs",
+            "link_url": "#"
+          }
+        }
+      },
+      "block_order": [
+        "featured_logo_iNWzfX",
+        "footer_logo_gf9NbQ",
+        "featured_logo_YJipT8",
+        "featured_logo_TpwVa6",
+        "featured_logo_VJdjHB",
+        "featured_logo_YrBkHj",
+        "featured_logo_HJ6MEm",
+        "instagram_image_9Gkjkm",
+        "instagram_image_kPnFnc",
+        "instagram_image_PXzdQM",
+        "instagram_image_Qm6Kn3",
+        "instagram_image_3QUEAi",
+        "instagram_image_Ej9B3N",
+        "instagram_image_PeJb4a",
+        "learn_link_zydw4a",
+        "learn_link_thh3m6",
+        "learn_link_M6BHat",
+        "learn_link_B3Kkdm"
+      ],
+      "name": "Custom Footer",
+      "settings": {
+        "featured_in_text": "FEATURED IN",
+        "instagram_handle": "@keps16",
+        "experience_column1": "",
+        "square_image": "shopify://shop_images/3cbe034126ae7846e6b2b992aec7a529827a59b5_e86d14cc-00cd-493c-b268-30a5abf557c1.png",
+        "copyright": "©2025 Your Brand Name"
+      }
+    },
     "footer": {
       "type": "footer",
       "disabled": true,
@@ -31,6 +176,7 @@
     }
   },
   "order": [
+    "custom_footer_iUUXcD",
     "footer"
   ]
 }

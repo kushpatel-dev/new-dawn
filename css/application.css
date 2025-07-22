@@ -31,6 +31,6 @@ header a {
 @apply !bg-[#6E7264] px-1 py-2;
 }
 
-  .half-blur{
-    
-  }
+.second-section-blur {
+background: linear-gradient(90deg, rgba(247, 247, 242, 0) 40.28%, #F7F7F2 100%);
+}
