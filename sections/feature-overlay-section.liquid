@@ -1,0 +1,96 @@
+<div class="relative w-full overflow-hidden">
+  {% if section.settings.background_image %}
+    <img
+      height=""
+      width=""
+      src="{{ section.settings.background_image | image_url: width: 2400, height: 1000}}"
+      alt=""
+      class="w-full h-auto md:max-h-[800px] object-cover"
+      loading="lazy">
+  {% endif %}
+
+
+  <div class="absolute bottom-0 left-0 w-full flex flex-col md:flex-row gap-4 md:gap-8 z-10">
+    <!-- Left Block -->
+    <div class="flex-1 rounded-xl shadow-lg px-6 py-8 md:px-10 md:py-12 mb-4 md:mb-0">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-2 text-gray-900">{{ section.settings.left_heading }}</h2>
+      <p class="mb-5 text-gray-700">{{ section.settings.left_text }}</p>
+      {% if section.settings.left_link %}
+        <a href="{{ section.settings.left_link }}" class="inline-block bg-transparent border border-gray-900 px-6 py-2 rounded hover:bg-gray-100 transition font-medium text-gray-900">
+          {{ section.settings.left_button }}
+        </a>
+      {% endif %}
+    </div>
+    <!-- Right Block -->
+    <div class="flex-1 rounded-xl shadow-lg px-6 py-8 md:px-10 md:py-12">
+      <h2 class="text-2xl md:text-3xl font-semibold mb-2 text-gray-900">{{ section.settings.right_heading }}</h2>
+      <p class="mb-5 text-gray-700">{{ section.settings.right_text }}</p>
+      {% if section.settings.right_link %}
+        <a href="{{ section.settings.right_link }}" class="inline-block bg-transparent border border-gray-900 px-6 py-2 rounded hover:bg-gray-100 transition font-medium text-gray-900">
+          {{ section.settings.right_button }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Feature Overlay Section",
+    "tag": "section",
+    "class": "feature-overlay-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "left_heading",
+        "label": "Left Block Heading",
+        "default": "Bespoke Styling"
+      },
+      {
+        "type": "textarea",
+        "id": "left_text",
+        "label": "Left Block Description",
+        "default": "From modern cuts to classic looks—tailored for you with precision and artistry."
+      },
+      {
+        "type": "url",
+        "id": "left_link",
+        "label": "Left Block Button Link"
+      }, {
+        "type": "text",
+        "id": "left_button",
+        "label": "Left Block Button Text",
+        "default": "Learn More"
+      }, {
+        "type": "text",
+        "id": "right_heading",
+        "label": "Right Block Heading",
+        "default": "Signature Color"
+      }, {
+        "type": "textarea",
+        "id": "right_text",
+        "label": "Right Block Description",
+        "default": "Dimensional balayage, lived-in blondes, and vibrant tones created with care."
+      }, {
+        "type": "url",
+        "id": "right_link",
+        "label": "Right Block Button Link"
+      }, {
+        "type": "text",
+        "id": "right_button",
+        "label": "Right Block Button Text",
+        "default": "Learn More"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Feature Overlay Section"
+      }
+    ]
+  }
+{% endschema %}

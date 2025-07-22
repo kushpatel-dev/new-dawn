@@ -49,50 +49,193 @@
         "show_text_below": true
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "slideshow_XWN7p3": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_tAgxzn": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/2a3fb396fcb98045986c99b0ac0d3fad4c0ec52b.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "The Haus of Bloom Difference",
+            "heading_size": "h1",
+            "subheading": "Discover a sanctuary where hair, skin, and soul are nurtured. Our expert stylists and therapists craft personalized beauty rituals in a space designed for calm, confidence, and creativity. will work with you to create a look that works for your personality and lifestyle.Read more...",
+            "button_label": "About Us",
+            "link": "shopify://collections/sofa",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-right",
+            "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        }
+      },
+      "block_order": [
+        "slide_tAgxzn"
+      ],
+      "name": "t:sections.slideshow.presets.name",
       "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
-    "before_after_49mwjU": {
-      "type": "before-after",
-      "name": "Before / After Slider",
+    "feature_overlay_section_fBtNhW": {
+      "type": "feature-overlay-section",
+      "name": "Feature Overlay Section",
       "settings": {
-        "bf_image": "shopify://shop_images/home_decor_home_decor_ideas_apartment_decor.jpg",
-        "af_image": "shopify://shop_images/aa5bee3d-1fae-414e-8c2d-53eab9658122.jpg",
-        "grayscale_before": true,
-        "show_content": true,
-        "ba_heading": "Before & After",
-        "ba_content": "<p>See the transformation in real-time using the slider above.</p>"
+        "background_image": "shopify://shop_images/5d1bad7b2e9a75061ecab016453007301c8b47a2.jpg",
+        "left_heading": "Bespoke Styling Services",
+        "left_text": "From modern cuts to classic looks—tailored for you with precision and artistry.",
+        "left_link": "#",
+        "left_button": "Learn More",
+        "right_heading": "Signature Color Services",
+        "right_text": "Dimensional balayage, lived-in blondes, and vibrant tones created with care.",
+        "right_link": "#",
+        "right_button": "Learn More"
+      }
+    },
+    "custom_cards_section_GgAMKF": {
+      "type": "custom-cards-section",
+      "blocks": {
+        "card_nAxrc8": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/wreath_1.png",
+            "title": "Best Luxury Salon 2024",
+            "description": "Recognized for outstanding service, elevated design, and premium client care, Haus of Bloom was named the top salon destination for modern beauty seekers in San Francisco.",
+            "button_text": "Read More",
+            "button_url": "shopify://collections/sofa",
+            "background_color": "#111111",
+            "text_color": "#ffffff",
+            "button_color": "#ffffff",
+            "button_text_color": "#222222"
+          }
+        },
+        "card_AyyFex": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/wreath_1.png",
+            "title": "Eco Beauty Leader",
+            "description": "Our commitment to clean products, mindful sourcing, and sustainable practices earned us recognition as a leader in eco-conscious salon experiences.",
+            "button_text": "Read More",
+            "button_url": "#",
+            "background_color": "#111111",
+            "text_color": "#ffffff",
+            "button_color": "#ffffff",
+            "button_text_color": "#222222"
+          }
+        },
+        "card_UaGKh9": {
+          "type": "card",
+          "settings": {
+            "card_image": "shopify://shop_images/wreath_1.png",
+            "title": "Top Color Studio",
+            "description": "From natural blends to bold statements, our expert colorists have been honored for creative mastery and consistently stunning results.",
+            "button_text": "Read More",
+            "button_url": "#",
+            "background_color": "#111111",
+            "text_color": "#ffffff",
+            "button_color": "#ffffff",
+            "button_text_color": "#222222"
+          }
+        }
+      },
+      "block_order": [
+        "card_nAxrc8",
+        "card_AyyFex",
+        "card_UaGKh9"
+      ],
+      "name": "Customizable Cards",
+      "settings": {}
+    },
+    "slideshow_DkqEe3": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_feFQTE": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/d08c3ff975b5a56eb30b74a662660fc9802cfb5c.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "<strong>Where Elevated </strong> Beauty Begins",
+            "heading_size": "h1",
+            "subheading": "Located in the heart of San Francisco, Haus of Bloom – SF Studio offers a sanctuary of style, calm, and expert care. From precision cuts to restorative skin rituals, our curated services are tailored to suit your individuality whether you're preparing for a moment or simply taking one for yourself. Step into a space where timeless design meets modern beauty. Our team of skilled stylists and specialists bring intention to every appointment, creating elevated results for clients of all hair types, textures, and lifestyles.  Whether you're seeking transformation or touch-up, this is your place to pause, breathe, and bloom.",
+            "button_label": "Contact San Francisco",
+            "link": "#",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_feFQTE"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "slideshow_eqkYWD": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_xUWBrt": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/4dd4fc0d89910c067041adf6875228ea4311634a.jpg",
+            "image_overlay_opacity": 0,
+            "heading": "Rooted in Care Styled for Life.",
+            "heading_size": "h1",
+            "subheading": "Experience the elegance of Haus of Bloom  Granite Bay, where everyday beauty meets upscale simplicity. Set against the backdrop of peaceful Quarry Ponds, our studio is a quiet haven for personalized hair and skincare experiences. Here, it’s never just an appointment it’s a moment to reset. Our artists specialize in effortless color, precision styling, and restorative treatments tailored to your rhythm and lifestyle. Every detail is considered, every service curated with care. Whether you're local or visiting, step into a space that feels calm, intentional, and beautifully yours.",
+            "button_label": "Contact Granite Bay",
+            "link": "#",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-right",
+            "text_alignment": "left",
+            "text_alignment_mobile": "center",
+            "color_scheme": ""
+          }
+        }
+      },
+      "block_order": [
+        "slide_xUWBrt"
+      ],
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
       }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection",
-    "before_after_49mwjU"
+    "slideshow_XWN7p3",
+    "feature_overlay_section_fBtNhW",
+    "custom_cards_section_GgAMKF",
+    "slideshow_DkqEe3",
+    "slideshow_eqkYWD"
   ]
 }

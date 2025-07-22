@@ -1,0 +1,125 @@
+<div class="w-full px-4 md:px-8 lg:px-12 py-10">
+  <div class="flex flex-wrap justify-center md:justify-evenly gap-6">
+    {% for block in section.blocks %}
+      <div class="flex flex-col items-center text-center shadow-lg p-6 backdrop-blur-sm transition-all duration-300 ease-in-out" style="
+          background: {{ block.settings.background_color }};
+          color: {{ block.settings.text_color }};
+          width: 100%;
+          max-width: 345px;
+          min-width: 240px;
+          flex: 1 1 240px;
+          max-height: 430px;
+          overflow: hidden;
+        ">
+        {% if block.settings.card_image %}
+          <img
+            height=""
+            width=""
+            src="{{ block.settings.card_image | image_url: width: 160 }}"
+            alt="{{ block.settings.title | escape }}"
+            class="mb-6 h-20 w-20 object-contain mx-auto">
+        {% endif %}
+        <h3 class="text-xl font-semibold mb-3 break-words leading-tight" style="color: {{ block.settings.text_color }}">
+          {{ block.settings.title }}
+        </h3>
+        <p class="mb-6 text-base break-words leading-relaxed max-w-md" style="color: {{ block.settings.text_color }}">
+          {{ block.settings.description }}
+        </p>
+        {% if block.settings.button_text and block.settings.button_url %}
+          <a
+            href="{{ block.settings.button_url }}"
+            class="inline-block font-medium px-6 py-2 rounded-md border text-sm transition hover:scale-105"
+            style="
+              background: {{ block.settings.button_color }};
+              color: {{ block.settings.button_text_color }};
+              border-color: {{ block.settings.button_color }};
+            ">
+            {{ block.settings.button_text }}
+          </a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Cards-Section",
+    "tag": "section",
+    "max_blocks": 5,
+    "settings": [
+      {
+        "type": "header",
+        "content": "Add up to 5 cards. Each one is fully customizable."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "card",
+        "name": "Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "card_image",
+            "label": "Card Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Card Title",
+            "default": "Award Title"
+          },
+          {
+            "type": "textarea",
+            "id": "description",
+            "label": "Description",
+            "default": "Award description goes here—write as much as you'd like."
+          },
+          {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Read More"
+          }, {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button Link"
+          }, {
+            "type": "color",
+            "id": "background_color",
+            "label": "Background Color",
+            "default": "#111111"
+          }, {
+            "type": "color",
+            "id": "text_color",
+            "label": "Text Color",
+            "default": "#ffffff"
+          }, {
+            "type": "color",
+            "id": "button_color",
+            "label": "Button Color",
+            "default": "#ffffff"
+          }, {
+            "type": "color",
+            "id": "button_text_color",
+            "label": "Button Text Color",
+            "default": "#222222"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Customizable Cards",
+        "blocks": [
+          {
+            "type": "card"
+          }, {
+            "type": "card"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

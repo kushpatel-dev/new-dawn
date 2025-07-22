@@ -80,11 +80,63 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
+    },
+    "custom_header_TLGcFw": {
+      "type": "custom-header",
+      "blocks": {
+        "link_NqLU6p": {
+          "type": "link",
+          "settings": {
+            "text": "SF Luxury Services",
+            "link": ""
+          }
+        },
+        "link_AzEtd6": {
+          "type": "link",
+          "settings": {
+            "text": "Granite Bay Luxury Services",
+            "link": ""
+          }
+        },
+        "link_gG3TH8": {
+          "type": "link",
+          "settings": {
+            "text": "Spa Amenities",
+            "link": ""
+          }
+        },
+        "link_NWUHUm": {
+          "type": "link",
+          "settings": {
+            "text": "Haus of Bloom Experience",
+            "link": ""
+          }
+        },
+        "link_XqigP6": {
+          "type": "link",
+          "settings": {
+            "text": "Contact",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "link_NqLU6p",
+        "link_AzEtd6",
+        "link_gG3TH8",
+        "link_NWUHUm",
+        "link_XqigP6"
+      ],
+      "name": "Header with Logo & Navigation",
+      "settings": {
+        "logo": "shopify://shop_images/Adobe_Express_-_file.png"
+      }
     }
   },
   "order": [
     "announcement_bar_custom_PAebfm",
     "announcement-bar",
-    "header"
+    "header",
+    "custom_header_TLGcFw"
   ]
 }

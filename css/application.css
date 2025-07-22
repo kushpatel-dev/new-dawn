@@ -30,3 +30,7 @@ header a {
 .btn-about a{
 @apply !bg-[#6E7264] px-1 py-2;
 }
+
+  .half-blur{
+    
+  }
