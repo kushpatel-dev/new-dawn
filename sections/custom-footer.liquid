@@ -1,170 +1,161 @@
-<div class="w-full bg-[#f7f6f3] text-[#232220] py-9 px-2 font-sans">
-  <div class="max-w-8xl mx-auto">
+<footer class="bg-[#f7f7f2] w-full px-2 md:px-8 pt-12 pb-6">
+  <!-- Featured In -->
+  <div class="max-w-8xl mx-auto flex flex-col items-center">
+    <h2 class="text-lg md:text-xl font-semibold tracking-wide mb-7 text-gray-900 uppercase">
+      {{ section.settings.featured_title }}
+    </h2>
+    <div class="flex flex-wrap flex-1 justify-center gap-5 md:gap-8 items-center mb-8">
+      {% for block in section.blocks %}
+        {% if block.type == "featured_logo" %}
+          <img
+            height=""
+            width=""
+            src="{{ block.settings.logo_image | image_url }}"
+            alt="{{ block.settings.logo_alt }}"
+            class="h-4 md:h-6 object-contain" />
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div class="w-full border-t border-[#d0d0c9] my-8"></div>
+  </div>
 
-    <!-- Featured In Bar -->
-    <div class="mb-8 text-center">
-      <div class="uppercase tracking-wider font-bold mb-3 text-3xl">
-        {{ section.settings.featured_in_text }}
+  <!-- Footer Columns -->
+  <div class="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between items-stretch gap-10 md:gap-40 mt-4">
+    <!-- Instagram Column -->
+    <div class="flex-1 flex flex-col gap-4 justify-start items-center md:items-baseline max-w-[450px]">
+      <div>
+        <h3 class="font-bold text-[20px] mb-1 text-gray-900">{{ section.settings.insta_title }}</h3>
+        <span class="font-semibold text-[16px] text-[#232222]">{{ section.settings.insta_handle }}</span>
       </div>
-      <div class="flex flex-wrap justify-center gap-x-7 gap-y-6">
+      <div>
+        <img
+          height=""
+          width=""
+          src="{{ section.settings.insta_image | image_url }}"
+          alt="{{ section.settings.insta_image_alt }}"
+          class="w-[220px] h-[220px] object-cover cursor-pointer" />
+      </div>
+    </div>
+    <!-- Experience & Learn More -->
+    <div class="flex flex-1 flex-col gap-8 max-w-[450px]">
+      <div>
+        <h4 class="font-bold text-gray-900 text-base md:text-lg mb-2 tracking-tight">
+          {{ section.settings.exp_title }}
+        </h4>
+        <ul class="flex flex-col gap-0.5 text-[15px] text-[#474540]">
+          {% for block in section.blocks %}
+            {% if block.type == "exp_link" %}
+              <li>
+                <a href="{{ block.settings.exp_link_url }}" class="hover:underline">{{ block.settings.exp_link_label }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-gray-900 text-base md:text-lg mb-2 tracking-tight">
+          {{ section.settings.learn_title }}
+        </h4>
+        <ul class="flex flex-col gap-0.5 text-[15px] text-[#474540]">
+          {% for block in section.blocks %}
+            {% if block.type == "learn_link" %}
+              <li>
+                <a href="{{ block.settings.learn_link_url }}" class="hover:underline">{{ block.settings.learn_link_label }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <!-- Branding & Social -->
+    <div class="flex-1 flex flex-col items-center md:items-center gap-5 md:gap-12">
+      <div>
+        <img
+          height=""
+          width=""
+          src="{{ section.settings.logo | image_url }}"
+          alt="{{ section.settings.logo_alt }}"
+          class="h-20 w-auto object-contain" />
+      </div>
+      <div class="flex gap-3 mt-1">
         {% for block in section.blocks %}
-          {% if block.type == 'featured_logo' and block.settings.logo_img != blank %}
-            <img
-              height=""
-              width=""
-              src="{{ block.settings.logo_img | img_url: '80x' }}"
-              alt="Featured Logo"
-              class="h-8 w-auto object-contain" />
+          {% if block.type == "social_icon" %}
+            <a
+              href="{{ block.settings.social_url }}"
+              target="_blank"
+              rel="noopener">
+              <img
+                height=""
+                width=""
+                src="{{ block.settings.social_icon | image_url }}"
+                alt="{{ block.settings.social_alt }}"
+                class="h-8 w-8" />
+            </a>
           {% endif %}
         {% endfor %}
       </div>
-    </div>
-
-    <!-- Two Column Layout -->
-    <div class="flex flex-col md:flex-row gap-9">
-
-      <!-- LEFT: Instagram -->
-      <div class="md:w-1/3 flex flex-col items-start mb-6 md:mb-0">
-        <div class="text-[1.1em] font-semibold mb-2">
-          FOLLOW US ON INSTAGRAM
-          <div class="block font-medium text-base">{{ section.settings.instagram_handle }}</div>
-        </div>
-        {% comment %} add {% endcomment %}
-        <div class="flex-1 flex flex-col items-start">
-          <div class="font-bold text-base mb-2">{{ section.settings.experience_column1 }}</div>
-          {% if section.settings.square_image %}
-            <img
-              height=""
-              width=""
-              src="{{ section.settings.square_image | img_url: '90x90' }}"
-              alt="Experience Image"
-              class="w-[90px] h-[90px] rounded-md object-cover mt-2" />
-          {% endif %}
-        </div>
-
-      </div>
-
-      <!-- RIGHT: Experience, Links, Logos -->
-      <div class="md:w-2/3 flex flex-col gap-6">
-        <div class="flex flex-col lg:flex-col gap-6">
-
-          <!-- COLUMN 1: Experience Text and Image -->
-
-          <div class="flex-1 flex flex-col">
-            <h2 class="text-lg font-semibold mb-2">Haus of bloom Experience</h2>
-            <ul class="space-y-1">
-              {% for block in section.blocks %}
-                {% if block.type == 'learn_link' and block.settings.link_label != blank and block.settings.link_url != blank %}
-                  <li>
-                    <a href="{{ block.settings.link_url }}" class="hover:text-[#1e5e7f]">
-                      {{ block.settings.link_label }}
-                    </a>
-                  </li>
-                {% endif %}
-              {% endfor %}
-            </ul>
-          </div>
-          <!-- COLUMN 2: Learn More Links -->
-          <div class="flex-1 flex flex-col max-w-[100px]">
-            <h2 class="text-lg font-semibold mb-2">Learn More</h2>
-            <ul class="space-y-1">
-              {% for block in section.blocks %}
-                {% if block.type == 'learn_link' and block.settings.link_label != blank and block.settings.link_url != blank %}
-                  <li>
-                    <a href="{{ block.settings.link_url }}" class="hover:text-[#1e5e7f]">
-                      {{ block.settings.link_label }}
-                    </a>
-                  </li>
-                {% endif %}
-              {% endfor %}
-            </ul>
-          </div>
-
-          <!-- COLUMN 3: Footer Logos and Main Logo -->
-          <div class="flex-1 flex flex-col items-center justify-between">
-            <div class="flex gap-3 mb-3">
-              {% for block in section.blocks %}
-                {% if block.type == 'footer_logo' and block.settings.footer_logo_img != blank %}
-                  <img
-                    height=""
-                    width=""
-                    src="{{ block.settings.footer_logo_img | img_url: '50*50' }}"
-                    alt="Footer Logo"
-                    class="w-[80px] h-[80px] object-contain" />
-                {% endif %}
-              {% endfor %}
-            </div>
-
-            {% comment %} add {% endcomment %}
-            <div class="flex gap-3 mt-3">
-              {% for block in section.blocks %}
-                {% if block.type == 'instagram_image' and block.settings.insta_img != blank %}
-                  <img
-                    height=""
-                    width=""
-                    src="{{ block.settings.insta_img | img_url: '60x60' }}"
-                    alt="Instagram image"
-                    class="w-15 h-15 rounded-lg object-cover" />
-                {% endif %}
-              {% endfor %}
-            </div>
-            <div class="mt-3">
-              {% if section.settings.main_logo %}
-                <img
-                  height=""
-                  width=""
-                  src="{{ section.settings.main_logo | img_url: '120x' }}"
-                  alt="Site Logo"
-                  class="w-20 h-auto" />
-              {% endif %}
-            </div>
-          </div>
-        </div>
-
-        <!-- Copyright -->
-        <div class="text-right text-sm text-[#969390] pt-4 mt-4 border-t border-[#e9e7e6]">
-          {{ section.settings.copyright }}
-        </div>
-      </div>
+      <span class="text-[18px] mt-10 md:mt-32 text-[#59594f] font-medium">
+        {{ section.settings.copyright }}
+      </span>
     </div>
   </div>
-</div>
+</footer>
 
 {% schema %}
   {
-    "name": "Custom Footer",
+    "name": "Custom Footer Section",
     "settings": [
       {
         "type": "text",
-        "id": "featured_in_text",
-        "label": "Featured In Heading",
+        "id": "featured_title",
+        "label": "Featured In Title",
         "default": "FEATURED IN"
       },
       {
         "type": "text",
-        "id": "instagram_handle",
-        "label": "Instagram Handle",
-        "default": "@yourInstagram"
+        "id": "insta_title",
+        "label": "Instagram CTA Title",
+        "default": "FOLLOW US ON INSTAGRAM"
       },
       {
         "type": "text",
-        "id": "experience_column1",
-        "label": "Column 1 Bold Text",
-        "default": "YOUR EXPERIENCE TITLE"
+        "id": "insta_handle",
+        "label": "Instagram Handle",
+        "default": "@hausofbloomsaloon"
       },
       {
         "type": "image_picker",
-        "id": "square_image",
-        "label": "Column 1 Square Image"
+        "id": "insta_image",
+        "label": "Instagram Image"
+      }, {
+        "type": "text",
+        "id": "insta_image_alt",
+        "label": "Instagram Image Alt",
+        "default": "Salon Instagram"
+      }, {
+        "type": "text",
+        "id": "exp_title",
+        "label": "Experience Title",
+        "default": "HAUS OF BLOOM EXPERIENCE"
+      }, {
+        "type": "text",
+        "id": "learn_title",
+        "label": "Learn More Title",
+        "default": "LEARN MORE"
       }, {
         "type": "image_picker",
-        "id": "main_logo",
-        "label": "Main Brand Logo"
+        "id": "logo",
+        "label": "Brand Logo"
+      }, {
+        "type": "text",
+        "id": "logo_alt",
+        "label": "Logo Alt Text",
+        "default": "Haus of Bloom Logo"
       }, {
         "type": "text",
         "id": "copyright",
-        "label": "Copyright Text",
-        "default": "©2025 Your Brand Name"
+        "label": "Copyright",
+        "default": "©2025 Haus of Bloom"
       }
     ],
     "blocks": [
@@ -174,53 +165,66 @@
         "settings": [
           {
             "type": "image_picker",
-            "id": "logo_img",
+            "id": "logo_image",
             "label": "Logo Image"
+          }, {
+            "type": "text",
+            "id": "logo_alt",
+            "label": "Logo Alt Text"
           }
-        ],
-        "limit": 10
+        ]
       }, {
-        "type": "instagram_image",
-        "name": "Instagram Image",
+        "type": "exp_link",
+        "name": "Experience Link",
         "settings": [
           {
-            "type": "image_picker",
-            "id": "insta_img",
-            "label": "Instagram Image"
+            "type": "text",
+            "id": "exp_link_label",
+            "label": "Link Label"
+          }, {
+            "type": "url",
+            "id": "exp_link_url",
+            "label": "Link URL"
           }
-        ],
-        "limit": 8
-      }, {
-        "type": "footer_logo",
-        "name": "Footer Logo",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "footer_logo_img",
-            "label": "Footer Logo Image"
-          }
-        ],
-        "limit": 10
+        ]
       }, {
         "type": "learn_link",
         "name": "Learn More Link",
         "settings": [
           {
             "type": "text",
-            "id": "link_label",
+            "id": "learn_link_label",
             "label": "Link Label"
           }, {
             "type": "url",
-            "id": "link_url",
+            "id": "learn_link_url",
             "label": "Link URL"
           }
-        ],
-        "limit": 10
+        ]
+      }, {
+        "type": "social_icon",
+        "name": "Social Icon",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "social_icon",
+            "label": "Social Icon Image"
+          }, {
+            "type": "text",
+            "id": "social_alt",
+            "label": "Alt Text"
+          }, {
+            "type": "url",
+            "id": "social_url",
+            "label": "Social Link URL"
+          }
+        ]
       }
     ],
+    "max_blocks": 30,
     "presets": [
       {
-        "name": "Custom Footer"
+        "name": "Custom Footer - Multi Logo"
       }
     ]
   }
