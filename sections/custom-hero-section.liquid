@@ -1,0 +1,121 @@
+<section class="relative w-full min-h-screen flex items-center justify-center">
+  <div class="block absolute inset-0 w-full h-full z-10" style="background: linear-gradient(180deg, rgba(247,247,242,0) 0%, rgba(247,247,242,0.67) 35%, rgba(247,247,242,0.8) 55%, #F7F7F2 100%); z-index: 10;"></div>
+
+  <img
+    height=""
+    width=""
+    src="{{ section.settings.background_image | img_url: '2048x' }}"
+    alt="{{ section.settings.background_image_alt_text }}"
+    class="absolute inset-0 w-full h-full object-cover z-0 min-h-screen" />
+  <div class="relative z-20 flex flex-col items-center justify-center w-full px-4">
+    <h1 class="text-center leading-tight tracking-tight mb-8 uppercase drop-shadow-md" style="
+        color: {{ section.settings.heading_text_color }};
+        font-family: {{ section.settings.heading_font_style }};
+        font-size: {{ section.settings.heading_font_size }};
+      ">
+      <span class="block">{{ section.settings.line_1 }}</span>
+      <span class="block font-extrabold">{{ section.settings.line_2 }}</span>
+      <span class="block font-extrabold">{{ section.settings.line_3 }}</span>
+    </h1>
+    <div class="flex flex-col sm:flex-row gap-4">
+      <a href="{{ section.settings.button_1_url }}" class="px-8 py-3 border-2 border-white text-white font-semibold text-base sm:text-lg rounded-lg transition shadow-md hover:bg-white hover:text-black text-center uppercase tracking-wide">
+        {{ section.settings.button_1_text }}
+      </a>
+      <a href="{{ section.settings.button_2_url }}" class="px-8 py-3 border-2 border-white text-white font-semibold text-base sm:text-lg rounded-lg transition shadow-md hover:bg-white hover:text-black text-center uppercase tracking-wide">
+        {{ section.settings.button_2_text }}
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Haus of Bloom Experience",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "background_image_alt_text",
+        "label": "Background Image Alt Text",
+        "default": "Haus of Bloom Experience"
+      },
+      {
+        "type": "text",
+        "id": "heading_text_color",
+        "label": "Heading Text Color (HEX)",
+        "default": "#ffffff",
+        "info": "Enter a HEX color code like #ffffff for white."
+      },
+      {
+        "type": "select",
+        "id": "heading_font_style",
+        "label": "Heading Font Style",
+        "default": "sans-serif",
+        "options": [
+          {
+            "value": "sans-serif",
+            "label": "Sans Serif"
+          }, {
+            "value": "serif",
+            "label": "Serif"
+          }, {
+            "value": "monospace",
+            "label": "Monospace"
+          }, {
+            "value": "'Brush Script MT', cursive",
+            "label": "Cursive"
+          }
+        ]
+      }, {
+        "type": "text",
+        "id": "heading_font_size",
+        "label": "Heading Font Size (e.g. 24px, 2rem)",
+        "default": "2rem",
+        "info": "Enter font size with unit (px, rem, em, etc.)"
+      }, {
+        "type": "text",
+        "id": "line_1",
+        "label": "Heading Line 1",
+        "default": "STEP INTO THE"
+      }, {
+        "type": "text",
+        "id": "line_2",
+        "label": "Heading Line 2",
+        "default": "HAUS OF BLOOM EXPERIENCE"
+      }, {
+        "type": "text",
+        "id": "line_3",
+        "label": "Heading Line 3",
+        "default": "A MODERN RETREAT FOR HAIR"
+      }, {
+        "type": "url",
+        "id": "button_1_url",
+        "label": "Button 1 URL"
+      }, {
+        "type": "text",
+        "id": "button_1_text",
+        "label": "Button 1 Text",
+        "default": "FIND A STYLIST"
+      }, {
+        "type": "url",
+        "id": "button_2_url",
+        "label": "Button 2 URL"
+      }, {
+        "type": "text",
+        "id": "button_2_text",
+        "label": "Button 2 Text",
+        "default": "BOOK NOW"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Hero Section",
+        "category": "Hero"
+      }
+    ]
+  }
+{% endschema %}

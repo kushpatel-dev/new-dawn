@@ -1,95 +1,123 @@
-<div class="relative w-full overflow-hidden">
-  {% if section.settings.background_image %}
+<section class="relative w-full min-h-screen flex items-center justify-center bg-[#f7f7f2] py-10">
+
+  <div class="block absolute inset-0 w-full h-full z-10" style="background: linear-gradient(90deg, rgba(247,247,242,0) 0%, rgba(247,247,242,0.67) 35%, rgba(247,247,242,0.8) 55%, #F7F7F2 100%); z-index: 10;"></div>
+
+  {% if section.settings.background_image != blank %}
     <img
       height=""
       width=""
-      src="{{ section.settings.background_image | image_url: width: 2400, height: 1000}}"
-      alt=""
-      class="w-full h-auto md:max-h-[800px] object-cover"
-      loading="lazy">
+      src="{{ section.settings.background_image | img_url: '2048x2048' }}"
+      alt="{{ section.settings.background_image_alt | escape }}"
+      class="absolute inset-0 w-full h-full object-cover z-0" />
   {% endif %}
 
+  <!-- Cards Container -->
+  <div class="relative z-10 flex flex-col md:flex-row gap-8 w-full max-w-7xl mt-[100px] md:mt-[200px] px-4 md:px-10">
 
-  <div class="absolute bottom-0 left-0 w-full flex flex-col md:flex-row gap-4 md:gap-8 z-10">
-    <!-- Left Block -->
-    <div class="flex-1 rounded-xl shadow-lg px-6 py-8 md:px-10 md:py-12 mb-4 md:mb-0">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-2 text-gray-900">{{ section.settings.left_heading }}</h2>
-      <p class="mb-5 text-gray-700">{{ section.settings.left_text }}</p>
-      {% if section.settings.left_link %}
-        <a href="{{ section.settings.left_link }}" class="inline-block bg-transparent border border-gray-900 px-6 py-2 rounded hover:bg-gray-100 transition font-medium text-gray-900">
-          {{ section.settings.left_button }}
-        </a>
-      {% endif %}
+    <!-- Bespoke Styling Card -->
+    <div class="flex-1 px-8 flex flex-col justify-end min-h-[140px] md:min-h-[340px]">
+      <h2 class="text-3xl font-bold md:text-4xl md:font-extrabold mb-2 tracking-tight lg:text-6xl text-gray-800 uppercase">
+        {{ section.settings.bespoke_heading_top }}<br>
+        <span class="text-lg font-light">{{ section.settings.bespoke_heading_sub }}</span>
+      </h2>
+      <p class="mb-6 text-gray-600 text-base md:text-lg">
+        {{ section.settings.bespoke_description }}
+      </p>
+      <a href="{{ section.settings.bespoke_link }}" class="inline-block w-max bg-transparent border border-gray-800 px-5 py-2 font-semibold text-gray-900 rounded hover:bg-gray-100 transition text-sm md:text-base">
+        {{ section.settings.bespoke_link_label }}
+      </a>
     </div>
-    <!-- Right Block -->
-    <div class="flex-1 rounded-xl shadow-lg px-6 py-8 md:px-10 md:py-12">
-      <h2 class="text-2xl md:text-3xl font-semibold mb-2 text-gray-900">{{ section.settings.right_heading }}</h2>
-      <p class="mb-5 text-gray-700">{{ section.settings.right_text }}</p>
-      {% if section.settings.right_link %}
-        <a href="{{ section.settings.right_link }}" class="inline-block bg-transparent border border-gray-900 px-6 py-2 rounded hover:bg-gray-100 transition font-medium text-gray-900">
-          {{ section.settings.right_button }}
-        </a>
-      {% endif %}
+
+    <!-- Signature Color Card -->
+    <div class="flex-1 px-8 flex flex-col justify-end min-h-[140px] md:min-h-[340px]">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4 tracking-tight text-gray-800 uppercase">
+        {{ section.settings.signature_heading_top }}<br>
+        <span class="text-lg font-light">{{ section.settings.signature_heading_sub }}</span>
+      </h2>
+      <p class="mb-4 text-gray-600 text-base md:text-lg">
+        {{ section.settings.signature_description }}
+      </p>
+      <a href="{{ section.settings.signature_link }}" class="inline-block w-max bg-transparent border border-gray-800 px-5 py-2 font-semibold text-gray-900 rounded hover:bg-gray-100 transition text-sm md:text-base">
+        {{ section.settings.signature_link_label }}
+      </a>
     </div>
   </div>
-</div>
+</section>
 
 {% schema %}
   {
-    "name": "Feature Overlay Section",
+    "name": "Bespoke Services",
     "tag": "section",
-    "class": "feature-overlay-section",
     "settings": [
       {
         "type": "image_picker",
         "id": "background_image",
         "label": "Background Image"
+
       },
       {
         "type": "text",
-        "id": "left_heading",
-        "label": "Left Block Heading",
+        "id": "background_image_alt",
+        "label": "Background Image Alt Text",
+        "default": "Service Background"
+      },
+
+      {
+        "type": "text",
+        "id": "bespoke_heading_top",
+        "label": "Bespoke Styling Heading Top",
         "default": "Bespoke Styling"
       },
       {
+        "type": "text",
+        "id": "bespoke_heading_sub",
+        "label": "Bespoke Styling Heading Subtext",
+        "default": "Services"
+      }, {
         "type": "textarea",
-        "id": "left_text",
-        "label": "Left Block Description",
+        "id": "bespoke_description",
+        "label": "Bespoke Styling Description",
         "default": "From modern cuts to classic looks—tailored for you with precision and artistry."
-      },
-      {
+      }, {
+        "type": "text",
+        "id": "bespoke_link_label",
+        "label": "Bespoke Styling Link Label",
+        "default": "LEARN MORE"
+      }, {
         "type": "url",
-        "id": "left_link",
-        "label": "Left Block Button Link"
+        "id": "bespoke_link",
+        "label": "Bespoke Styling Link URL"
+
       }, {
         "type": "text",
-        "id": "left_button",
-        "label": "Left Block Button Text",
-        "default": "Learn More"
-      }, {
-        "type": "text",
-        "id": "right_heading",
-        "label": "Right Block Heading",
+        "id": "signature_heading_top",
+        "label": "Signature Color Heading Top",
         "default": "Signature Color"
       }, {
+        "type": "text",
+        "id": "signature_heading_sub",
+        "label": "Signature Color Heading Subtext",
+        "default": "Services"
+      }, {
         "type": "textarea",
-        "id": "right_text",
-        "label": "Right Block Description",
+        "id": "signature_description",
+        "label": "Signature Color Description",
         "default": "Dimensional balayage, lived-in blondes, and vibrant tones created with care."
       }, {
-        "type": "url",
-        "id": "right_link",
-        "label": "Right Block Button Link"
-      }, {
         "type": "text",
-        "id": "right_button",
-        "label": "Right Block Button Text",
-        "default": "Learn More"
+        "id": "signature_link_label",
+        "label": "Signature Color Link Label",
+        "default": "LEARN MORE"
+      }, {
+        "type": "url",
+        "id": "signature_link",
+        "label": "Signature Color Link URL"
+
       }
     ],
     "presets": [
       {
-        "name": "Feature Overlay Section"
+        "name": "Bespoke Services"
       }
     ]
   }

@@ -35,6 +35,7 @@
         "heading",
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/2ad08f01a9ab43db087df5f35a3f8a338daf1595.jpg",
         "image_overlay_opacity": 10,
@@ -49,6 +50,24 @@
         "show_text_below": true
       }
     },
+    "custom_hero_section_8qVgtV": {
+      "type": "custom-hero-section",
+      "name": "Hero Section",
+      "settings": {
+        "background_image": "shopify://shop_images/2ad08f01a9ab43db087df5f35a3f8a338daf1595.jpg",
+        "background_image_alt_text": "Haus of Bloom Experience",
+        "heading_text_color": "#fff",
+        "heading_font_style": "sans-serif",
+        "heading_font_size": "",
+        "line_1": "STEP INTO THE",
+        "line_2": "HAUS OF BLOOM EXPERIENCE",
+        "line_3": "A MODERN RETREAT FOR HAIR",
+        "button_1_url": "shopify://products/gardening-hand-trowel",
+        "button_1_text": "FIND A STYLIST",
+        "button_2_url": "shopify://products/antique-drawers",
+        "button_2_text": "BOOK NOW"
+      }
+    },
     "hero_section_a9kPVY": {
       "type": "hero-section",
       "name": "Contact Us Hero Banner",
@@ -56,9 +75,9 @@
         "hero_image": "shopify://shop_images/2a3fb396fcb98045986c99b0ac0d3fad4c0ec52b.jpg",
         "card_alignment": "right",
         "show_content_bg": false,
-        "heading": "CONTACT US, TODAY!",
-        "description": "<p>With a convenient location in San Francisco, Blake Charles Salon is the place to go for anyone who wants to feel and look their absolute best! Visit our hair and nail salon on Maiden Lane to be treated to the best salon experience San Francisco has to offer! Simply book your appointment online or contact us at our salon on Maiden Lane at <strong>415-433-3030</strong>. We look forward to seeing you soon and treating you to a one-of-a-kind salon experience!</p>",
-        "cta_label": "About Us",
+        "heading": "THE HAUS OF BLOOM",
+        "description": "<p>Discover a sanctuary where hair, skin, and soul are nurtured. Our expert stylists and therapists craft personalized beauty rituals in a space designed for calm, confidence, and creativity...<br/><br/>read..</p>",
+        "cta_label": "ABOUT US",
         "cta_link": "#"
       }
     },
@@ -212,15 +231,16 @@
         "hero_image": "shopify://shop_images/9584f124c22ceecd5e98de56d0bdfcad4af5edaa.jpg",
         "card_alignment": "right",
         "show_content_bg": true,
-        "heading": "CONTACT US, TODAY!",
-        "description": "<p>With a convenient location in San Francisco, Blake Charles Salon is the place to go for anyone who wants to feel and look their absolute best! Visit our hair and nail salon on Maiden Lane to be treated to the best salon experience San Francisco has to offer! Simply book your appointment online or contact us at our salon on Maiden Lane at <strong>415-433-3030</strong>. We look forward to seeing you soon and treating you to a one-of-a-kind salon experience!</p>",
-        "cta_label": "CONTACT US DIRECTLY",
-        "cta_link": "#"
+        "heading": "THE HAUS OF BLOOM",
+        "description": "<p>Discover a sanctuary where hair, skin, and soul are nurtured. Our expert stylists and therapists craft personalized beauty rituals in a space designed for calm, confidence, and creativity...</p>",
+        "cta_label": "ABOUT US",
+        "cta_link": ""
       }
     }
   },
   "order": [
     "image_banner",
+    "custom_hero_section_8qVgtV",
     "hero_section_a9kPVY",
     "feature_overlay_section_fBtNhW",
     "custom_cards_section_GgAMKF",

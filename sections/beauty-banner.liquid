@@ -1,0 +1,184 @@
+<section class="relative w-full min-h-screen flex items-center bg-gray-100">
+  <!-- Background image and gradient overlay -->
+  <div class="absolute inset-0 w-full h-full">
+    {% if section.settings.background_image != blank %}
+      <img
+        height=""
+        width=""
+        src="{{ section.settings.background_image | img_url: '2000x' }}"
+        alt="{{ section.settings.background_alt | escape }}"
+        class="w-full h-full object-cover" />
+    {% endif %}
+    <div class="absolute inset-0 w-full" style="background: linear-gradient(270deg, rgba(247,247,242,0) 0%, rgba(247,247,242,0.67) 35%, rgba(247,247,242,0.8) 55%, #F7F7F2 100%);"></div>
+  </div>
+  {%- assign v_align = 'items-center' -%}
+  {% if section.settings.vertical_alignment == 'top' %}
+    {%- assign v_align = 'items-start' -%}
+  {% elsif section.settings.vertical_alignment == 'bottom' %}
+    {%- assign v_align = 'items-end' -%}
+  {% endif %}
+
+  {%- assign h_align = 'text-left items-start' -%}
+  {% if section.settings.horizontal_alignment == 'center' %}
+    {%- assign h_align = 'text-center items-center' -%}
+  {% elsif section.settings.horizontal_alignment == 'right' %}
+    {%- assign h_align = 'text-right items-end' -%}
+  {% endif %}
+
+  <div class="relative z-10 max-w-2xl ml-8 md:ml-16 px-8 py-12 flex flex-col {{ v_align }} {{ h_align }}">
+
+    <h2 class="font-sans font-bold mb-5" style="
+        color: {{ section.settings.heading_main_color }};
+        font-size: {{ section.settings.heading_main_size }}px;
+      ">
+      {{ section.settings.heading_main | escape }}
+    </h2>
+
+    <h2 class="font-serif mb-5" style="
+        color: {{ section.settings.heading_sec_color }};
+        font-size: {{ section.settings.heading_sec_size }}px;
+      ">
+      {{ section.settings.heading_secondary | escape }}
+    </h2>
+
+    <p class="mb-8" style="
+        color: {{ section.settings.paragraph_color }};
+        font-size: {{ section.settings.paragraph_size }}px;
+      ">
+      {{ section.settings.paragraph }}
+    </p>
+
+    {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+      <a
+        href="{{ section.settings.button_link }}"
+        class="inline-block w-max bg-transparent border border-gray-200 px-5 py-2 font-semibold rounded hover:bg-gray-700 transition text-2xl md:text-3xl"
+        style="color: {{ section.settings.button_text_color }};">
+        {{ section.settings.button_label | escape }}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Elevated Beauty Banner",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "background_image",
+        "label": "Background Image"
+      },
+      {
+        "type": "text",
+        "id": "background_alt",
+        "label": "Alt Text for Background Image",
+        "default": "Salon background"
+      },
+
+      {
+        "type": "select",
+        "id": "vertical_alignment",
+        "label": "Vertical Alignment",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }, {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "center"
+      },
+      {
+        "type": "select",
+        "id": "horizontal_alignment",
+        "label": "Horizontal Text Alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }
+        ],
+        "default": "left"
+      }, {
+        "type": "text",
+        "id": "heading_main",
+        "label": "Main Heading",
+        "default": "Where Elevated"
+      }, {
+        "type": "color",
+        "id": "heading_main_color",
+        "label": "Main Heading Color",
+        "default": "#232323"
+      }, {
+        "type": "number",
+        "id": "heading_main_size",
+        "label": "Main Heading Size (px)"
+      }, {
+        "type": "text",
+        "id": "heading_secondary",
+        "label": "Secondary Heading",
+        "default": "Beauty Begins"
+      }, {
+        "type": "color",
+        "id": "heading_sec_color",
+        "label": "Secondary Heading Color",
+        "default": "#232323"
+      }, {
+        "type": "number",
+        "id": "heading_sec_size",
+        "label": "Secondary Heading Size (px)"
+      }, {
+        "type": "textarea",
+        "id": "paragraph",
+        "label": "Description",
+        "default": "Located in the heart of San Francisco, Haus of Bloom – SF Studio offers a sanctuary of style, calm, and expert care. Step into a space where timeless design meets modern beauty."
+      }, {
+        "type": "color",
+        "id": "paragraph_color",
+        "label": "Paragraph Text Color",
+        "default": "#505050"
+      }, {
+        "type": "number",
+        "id": "paragraph_size",
+        "label": "Paragraph Font Size (px)"
+
+      }, {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button Label",
+        "default": "Contact San Francisco"
+      }, {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button Link"
+      }, {
+        "type": "color",
+        "id": "button_text_color",
+        "label": "Button Text Color",
+        "default": "#232323"
+      }, {
+        "type": "color",
+        "id": "text_color",
+        "label": "Default Text Color",
+        "default": "#232323"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Elevated Beauty Banner"
+      }
+    ]
+  }
+{% endschema %}
