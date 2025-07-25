@@ -73,10 +73,11 @@
       "name": "Contact Us Hero Banner",
       "settings": {
         "hero_image": "shopify://shop_images/2a3fb396fcb98045986c99b0ac0d3fad4c0ec52b.jpg",
+        "custom_gradient": "",
         "card_alignment": "right",
         "show_content_bg": false,
-        "heading": "THE HAUS OF BLOOM",
-        "description": "<p>Discover a sanctuary where hair, skin, and soul are nurtured. Our expert stylists and therapists craft personalized beauty rituals in a space designed for calm, confidence, and creativity...<br/><br/>read..</p>",
+        "heading": "The Haus of Bloom Difference",
+        "description": "<p>Discover a sanctuary where hair, skin, and soul are nurtured. Our expert stylists and therapists craft personalized beauty rituals in a space designed for calm, confidence, and creativity. will work with you to create a look that works for your personality and lifestyle.<br/><br/><a href=\"/policies/privacy-policy\" title=\"Privacy Policy\">Read more...</a></p>",
         "cta_label": "ABOUT US",
         "cta_link": "#"
       }
@@ -167,9 +168,9 @@
         "heading_secondary": "Beauty Begins",
         "heading_sec_color": "#121212",
         "heading_sec_size": 35,
-        "paragraph": "Located in the heart of San Francisco, Haus of Bloom – SF Studio offers a sanctuary of style, calm, and expert care. Step into a space where timeless design meets modern beauty.",
+        "paragraph": "Located in the heart of San Francisco, Haus of Bloom – SF Studio offers a sanctuary of style, calm, and expert care. From precision cuts to restorative skin rituals, our curated services are tailored to suit your individuality whether you're preparing for a moment or simply taking one for yourself.\n\nStep into a space where timeless design meets modern beauty. Our team of skilled stylists and specialists bring intention to every appointment, creating elevated results for clients of all hair types, textures, and lifestyles.  Whether you're seeking transformation or touch-up, this is your place to pause, breathe, and bloom.",
         "paragraph_color": "#121212",
-        "paragraph_size": 20,
+        "paragraph_size": 14,
         "button_label": "Contact San Francisco",
         "button_link": "#",
         "button_text_color": "#121212",
@@ -182,15 +183,15 @@
       "settings": {
         "background_image": "shopify://shop_images/4dd4fc0d89910c067041adf6875228ea4311634a.jpg",
         "background_alt": "Content background",
-        "heading_main": "Where Elevated",
+        "heading_main": "Rooted in Care",
         "heading_main_color": "#121212",
         "heading_main_size": 50,
-        "heading_secondary": "Beauty Begins",
+        "heading_secondary": "Styled for Life.",
         "heading_sec_color": "#121212",
         "heading_sec_size": 35,
-        "paragraph": "Located in the heart of San Francisco, Haus of Bloom – SF Studio offers a sanctuary of style, calm, and expert care. Step into a space where timeless design meets modern beauty.",
+        "paragraph": "Experience the elegance of Haus of Bloom  Granite Bay, where everyday beauty meets upscale simplicity. Set against the backdrop of peaceful Quarry Ponds, our studio is a quiet haven for personalized hair and skincare experiences.\n \nHere, it’s never just an appointment it’s a moment to reset. Our artists specialize in effortless color, precision styling, and restorative treatments tailored to your rhythm and lifestyle. Every detail is considered, every service curated with care.\n \nWhether you're local or visiting, step into a space that feels calm, intentional, and beautifully yours.",
         "paragraph_color": "#121212",
-        "paragraph_size": 20,
+        "paragraph_size": 14,
         "button_label": "Contact San Francisco",
         "button_link": "#",
         "button_text_color": "#121212",
@@ -202,11 +203,12 @@
       "name": "Contact Us Hero Banner",
       "settings": {
         "hero_image": "shopify://shop_images/9584f124c22ceecd5e98de56d0bdfcad4af5edaa.jpg",
+        "custom_gradient": "remove-gradient",
         "card_alignment": "right",
         "show_content_bg": true,
         "heading": "Contact Us, Today!",
-        "description": "<p>Discover a sanctuary where hair, skin, and soul are nurtured. Our expert stylists and therapists craft personalized beauty rituals in a space designed for calm, confidence, and creativity...</p>",
-        "cta_label": "ABOUT US",
+        "description": "<p>With a convenient location in San Francisco, Blake Charles Salon is the place to go for anyone who wants to feel and look their absolute best! Visit our hair and nail salon on Maiden Lane to be treated to the best salon experience San Francisco has to offer! Simply book your appointment online or contact us at our salon on Maiden Lane at 415-433-3030. We look forward to seeing you soon and treating you to a one-of-a-kind salon experience!</p>",
+        "cta_label": "Contact Us Directly",
         "cta_link": "#"
       }
     }

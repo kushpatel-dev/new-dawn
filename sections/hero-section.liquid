@@ -1,15 +1,16 @@
-<div class="relative w-full min-h-[700px] flex items-center
+<div class="relative w-full min-h-[700px] flex items-center 
+  {{section.settings.custom_gradient}}
   {% if section.settings.card_alignment == 'center' %}justify-center
   {% elsif section.settings.card_alignment == 'left' %}justify-start
   {% else %}justify-end
   {% endif %}" style="background-image: url({{ section.settings.hero_image | img_url: 'master' }}); background-size: cover; background-position: center;">
 
-  <div class="block absolute w-full h-full" style="
+  <div class="ctm-grd-rm block absolute w-full h-full" style="
     background: linear-gradient(90deg, rgba(247,247,242,0) 40.28%, #F7F7F2 100%);
     z-index: 0;
   ">
 </div>
-  <div class="last-section absolute right-36 z-0 max-w-3xl md:w-1/2 mx-[50px] px-7 my-12
+  <div class="last-section absolute right-46 z-0 max-w-3xl md:w-1/2 mx-[50px] px-7 my-12
     {% if section.settings.card_alignment == 'right' %}md:mr-16
     {% elsif section.settings.card_alignment == 'left' %}md:ml-16
     {% else %}mx-auto
@@ -41,6 +42,11 @@
         "label": "Hero Image"
       },
       {
+        "type": "text",
+        "id": "custom_gradient",
+        "label": "gradient value"
+      },
+      {
         "type": "select",
         "id": "card_alignment",
         "label": "Contact Card Alignment",
@@ -63,12 +69,11 @@
         "id": "show_content_bg",
         "label": "Enable Content Background Color",
         "default": true
-      },
-      {
+      }, {
         "type": "text",
         "id": "heading",
-        "label": "Heading",
-        "default": "CONTACT US, TODAY!"
+        "label": "Heading"
+
       }, {
         "type": "richtext",
         "id": "description",

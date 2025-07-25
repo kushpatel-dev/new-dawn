@@ -1,5 +1,5 @@
 <footer class="bg-[#f7f7f2] w-full px-2 md:px-8 pt-12 pb-6">
-  <!-- Featured In -->
+
   <div class="max-w-8xl mx-auto flex flex-col items-center">
     <h2 class="text-lg md:text-xl font-semibold tracking-wide mb-7 text-gray-900 uppercase">
       {{ section.settings.featured_title }}
@@ -22,7 +22,7 @@
   <!-- Footer Columns -->
   <div class="max-w-[1300px] mx-auto flex flex-col md:flex-row justify-between items-stretch gap-10 md:gap-40 mt-4">
     <!-- Instagram Column -->
-    <div class="flex-1 flex flex-col gap-4 justify-start items-center md:items-baseline max-w-[450px]">
+    <div class="flex-1 flex flex-col gap-4 justify-center items-center md:items-baseline max-w-[450px]">
       <div>
         <h3 class="font-bold text-[20px] mb-1 text-gray-900">{{ section.settings.insta_title }}</h3>
         <span class="font-semibold text-[16px] text-[#232222]">{{ section.settings.insta_handle }}</span>
@@ -37,12 +37,12 @@
       </div>
     </div>
     <!-- Experience & Learn More -->
-    <div class="flex flex-1 flex-col gap-8 max-w-[450px]">
+    <div class="flex flex-col items-center md:items-baseline">
       <div>
-        <h4 class="font-bold text-gray-900 text-base md:text-lg mb-2 tracking-tight">
+        <h4 class="font-bold text-gray-900 text-base md:text-lg mb-3 tracking-tight">
           {{ section.settings.exp_title }}
         </h4>
-        <ul class="flex flex-col gap-0.5 text-[15px] text-[#474540]">
+        <ul class="flex flex-col items-center md:items-start gap-0.5 text-[15px] text-[#474540]">
           {% for block in section.blocks %}
             {% if block.type == "exp_link" %}
               <li>
@@ -53,10 +53,10 @@
         </ul>
       </div>
       <div>
-        <h4 class="font-bold text-gray-900 text-base md:text-lg mb-2 tracking-tight">
+        <h4 class="font-bold text-gray-900 text-base md:text-lg mb-3 tracking-tight">
           {{ section.settings.learn_title }}
         </h4>
-        <ul class="flex flex-col gap-0.5 text-[15px] text-[#474540]">
+        <ul class="flex flex-col items-center md:items-start gap-0.5 text-[15px] text-[#474540]">
           {% for block in section.blocks %}
             {% if block.type == "learn_link" %}
               <li>
@@ -67,7 +67,7 @@
         </ul>
       </div>
     </div>
-    <!-- Branding & Social -->
+
     <div class="flex-1 flex flex-col items-center md:items-center gap-5 md:gap-12">
       <div>
         <img
