@@ -30,3 +30,11 @@ header a {
 .btn-about a{
 @apply !bg-[#6E7264] px-1 py-2;
 }
+
+@layer components {
+  .gradient-overlay {
+    @apply block absolute inset-0 w-full h-full z-10;
+    background: linear-gradient(180deg, rgba(247,247,242,0) 0%, rgba(247,247,242,0.67) 35%, rgba(247,247,242,0.8) 55%, #F7F7F2 100%);
+    z-index: 10;
+  }
+}
