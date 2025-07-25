@@ -35,6 +35,6 @@ header a {
   .gradient-overlay {
     @apply block absolute inset-0 w-full h-full z-10;
     background: linear-gradient(180deg, rgba(247,247,242,0) 0%, rgba(247,247,242,0.67) 35%, rgba(247,247,242,0.8) 55%, #F7F7F2 100%);
-    z-index: 10;
+    z-index: 99;
   }
 }

@@ -4,11 +4,8 @@
   {% else %}justify-end
   {% endif %}" style="background-image: url({{ section.settings.hero_image | img_url: 'master' }}); background-size: cover; background-position: center;">
 
-  <div class="block absolute w-full h-full" style="
-    background: linear-gradient(90deg, rgba(247,247,242,0) 40.28%, #F7F7F2 100%);
-    z-index: 0;
-  ">
-</div>
+  <div class="block absolute w-full h-full" style="background: linear-gradient(90deg, rgba(247,247,242,0) 40.28%, #F7F7F2 100%);z-index: 0;"></div>
+  <div class="gradient-overlay"></div>
   <div class="last-section absolute right-36 z-0 max-w-3xl md:w-1/2 mx-[50px] px-7 my-12
     {% if section.settings.card_alignment == 'right' %}md:mr-16
     {% elsif section.settings.card_alignment == 'left' %}md:ml-16
