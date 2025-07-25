@@ -85,15 +85,7 @@
       "type": "feature-overlay-section",
       "name": "Feature Overlay Section",
       "settings": {
-        "background_image": "shopify://shop_images/5d1bad7b2e9a75061ecab016453007301c8b47a2.jpg",
-        "left_heading": "Bespoke Styling Services",
-        "left_text": "From modern cuts to classic looks—tailored for you with precision and artistry.",
-        "left_link": "#",
-        "left_button": "Learn More",
-        "right_heading": "Signature Color Services",
-        "right_text": "Dimensional balayage, lived-in blondes, and vibrant tones created with care.",
-        "right_link": "#",
-        "right_button": "Learn More"
+        "background_image": "shopify://shop_images/5d1bad7b2e9a75061ecab016453007301c8b47a2.jpg"
       }
     },
     "custom_cards_section_GgAMKF": {
