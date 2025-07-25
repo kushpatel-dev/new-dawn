@@ -34,3 +34,8 @@ header a {
 .remove-gradient .ctm-grd-rm {
   background: none !important;
 }
+hr.custom-divider {
+  border-top: 2px solid #300506 !important;
+  margin: 3.8rem 0;
+  width: 100%;
+}
