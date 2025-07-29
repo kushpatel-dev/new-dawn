@@ -39,3 +39,7 @@ hr.custom-divider {
   margin: 3.8rem 0;
   width: 100%;
 }
+.video-container{
+  width: 100px;
+  height: 100px;
+}

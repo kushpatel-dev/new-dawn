@@ -9,27 +9,30 @@
     <img
       height=""
       width=""
-      src="{{ section.settings.background_image | img_url: '2000x' }}"
+      loading="lazy"
+      src="{{ section.settings.background_image | image_url: width: 2000 }}"
       alt="{{ section.settings.background_alt | escape }}"
       class="absolute inset-0 w-full h-full object-cover z-0" />
   {% endif %}
+
   <div class="absolute inset-0 w-full h-full z-10" style="background: linear-gradient(90deg, rgba(247,247,242,0) 0%, rgba(247,247,242,0.67) 35%, rgba(247,247,242,0.8) 55%, #F7F7F2 100%);"></div>
 
   <div class="relative z-100 max-w-3xl w-full ml-auto md:mr-16 px-8 py-12 flex flex-col items-start">
     <h2 class="font-bold mb-5" style="
-        color: {{ section.settings.heading_main_color }};
-        font-size: {{ section.settings.heading_main_size }}px;
-        font-family :{{section.settings.heading_font}};
-      ">
+  color: {{ section.settings.heading_main_color }};
+  font-size: {{ section.settings.heading_main_size }}px;
+  font-family: '{{ section.settings.heading_font.family }}',{{section.settings.heading_font.fallback_families}};
+">
       {{ section.settings.heading_main | escape }}
     </h2>
+
     <h2 class="font-serif mb-5" style="
         color: {{ section.settings.heading_sec_color }};
         font-size: {{ section.settings.heading_sec_size }}px;
       ">
       {{ section.settings.heading_secondary | escape }}
     </h2>
-    <p class="mb-8" style="
+    <p class="mb-8 san" style="
         color: {{ section.settings.paragraph_color }};
         font-size: {{ section.settings.paragraph_size }}px;
       ">
@@ -44,6 +47,12 @@
       </a>
     {% endif %}
   </div>
+  {% if section.settings.ctm_text != blank %}
+    <div class="z-100">
+      {{ section.settings.ctm_text }}
+    </div>
+  {% endif %}
+
 </section>
 
 {% schema %}
@@ -60,7 +69,7 @@
         "type": "font_picker",
         "id": "heading_font",
         "label": "Heading font",
-        "default": "helvetica_n4"
+        "default": "sans-serif"
       },
       {
         "type": "text",
@@ -69,6 +78,10 @@
         "default": "Content background"
       },
       {
+        "type": "html",
+        "id": "ctm_text",
+        "label": "enter your text..."
+      }, {
         "type": "text",
         "id": "heading_main",
         "label": "Main Heading",

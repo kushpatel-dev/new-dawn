@@ -182,7 +182,9 @@
       "name": "Granite Bay Content Banner",
       "settings": {
         "background_image": "shopify://shop_images/4dd4fc0d89910c067041adf6875228ea4311634a.jpg",
+        "heading_font": "sans-serif",
         "background_alt": "Content background",
+        "ctm_text": "",
         "heading_main": "Rooted in Care",
         "heading_main_color": "#121212",
         "heading_main_size": 50,
