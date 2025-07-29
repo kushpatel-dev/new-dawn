@@ -16,9 +16,10 @@
   <div class="absolute inset-0 w-full h-full z-10" style="background: linear-gradient(90deg, rgba(247,247,242,0) 0%, rgba(247,247,242,0.67) 35%, rgba(247,247,242,0.8) 55%, #F7F7F2 100%);"></div>
 
   <div class="relative z-100 max-w-3xl w-full ml-auto md:mr-16 px-8 py-12 flex flex-col items-start">
-    <h2 class="font-sans font-bold mb-5" style="
+    <h2 class="font-bold mb-5" style="
         color: {{ section.settings.heading_main_color }};
         font-size: {{ section.settings.heading_main_size }}px;
+        font-family :{{section.settings.heading_font}};
       ">
       {{ section.settings.heading_main | escape }}
     </h2>
@@ -56,6 +57,12 @@
         "label": "Background Image"
       },
       {
+        "type": "font_picker",
+        "id": "heading_font",
+        "label": "Heading font",
+        "default": "helvetica_n4"
+      },
+      {
         "type": "text",
         "id": "background_alt",
         "label": "Alt Text for Background Image",
@@ -66,8 +73,7 @@
         "id": "heading_main",
         "label": "Main Heading",
         "default": "Where Elevated"
-      },
-      {
+      }, {
         "type": "color",
         "id": "heading_main_color",
         "label": "Main Heading Color",
